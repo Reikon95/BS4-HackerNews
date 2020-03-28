@@ -14,5 +14,7 @@ src = result.content
 soup = BeautifulSoup(src, 'lxml')
 
 links = soup.find_all("a")
-
-print(links)
+urls = []
+for a in soup.find_all("a"):
+    urls.append(a)
+print(urls)
