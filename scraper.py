@@ -15,6 +15,9 @@ soup = BeautifulSoup(src, 'lxml')
 
 links = soup.find_all("a")
 urls = []
-for a in soup.find_all("a"):
-    urls.append(a)
+for link in soup.find_all("a"):
+    site = link.get('href')
+    if "http" in site:
+        urls.append(site)
 print(urls)
+print(len(urls))
