@@ -24,10 +24,15 @@ for link in soup.find_all("a"):
     if "http" in site:
         urls.append(site)
 athings = []
+finalisedInfo = []
 for item in soup.find_all('tr', {"class": "athing"}): 
     athings.append(item)
-    HNItem = HackerNewsStory('something', 'something', 'something', 'something', 'something', 'something')
+    rank = soup.find_all('span', {"class": "rank"})
+    url = soup.find_all('a', {"class": "storylink"})
+    HNItem = HackerNewsStory('something', url, 'something', 'something', 'something', rank)
+    finalisedInfo.append(HNItem)
 
 
 # print(athings)
-print(athings[1])
+# print(athings[1])
+print(finalisedInfo)
