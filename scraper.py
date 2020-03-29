@@ -3,13 +3,7 @@ from bs4 import BeautifulSoup
 
 result = requests.get("https://news.ycombinator.com/")
 
-# print(result.status_code)
-
-# print(result.headers)
-
 src = result.content
-
-# print(src)
 
 soup = BeautifulSoup(src, 'lxml')
 
@@ -23,10 +17,10 @@ for link in soup.find_all("a"):
 athings = []
 for items in soup.find_all('tr', {"class": "athing"}): 
     athings.append(items)
-# print(urls)
-# print(len(urls))
-print(athings)
 
+# print(athings)
+print(type(athings))
+print(athings[1])
 class HackerNewsStory:
     def __init__(self, title, url, author, points, comments, rank):
         self.title = title
