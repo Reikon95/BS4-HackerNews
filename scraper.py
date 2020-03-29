@@ -23,6 +23,16 @@ for link in soup.find_all("a"):
 athings = []
 for items in soup.find_all('tr', {"class": "athing"}): 
     athings.append(items)
-print(urls)
-print(len(urls))
+# print(urls)
+# print(len(urls))
 print(athings)
+
+class HackerNewsStory:
+    def __init__(self, title, url, author, points, comments, rank):
+        self.title = title
+        self.url = url
+        self.author = author
+        self.points = points
+        self.comments = comments
+        self.rank = rank
+ 
