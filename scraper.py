@@ -34,5 +34,5 @@ for item in soup.find_all('tr', {"class": "athing"}):
 
 
 # print(athings)
-# print(athings[1])
-print(finalisedInfo)
+print(athings[1])
+# print(finalisedInfo)
